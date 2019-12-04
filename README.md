@@ -1,6 +1,6 @@
 # Adaptive-and-Iteratively-Improving-Recurrent-Lateral-Connections
 An official Pytorch implementation of "Adaptive and Iteratively Improving Recurrent Lateral Connections" (https://arxiv.org/abs/1910.11105)
-![Image description](BasicFeedback.png| width=48, height=48)
+![Image description](BasicFeedback.png) <!-- .element height="50%" width="50%" -->
 ## Prerequisites
 - Ubuntu18.04
 - Python 3.6
