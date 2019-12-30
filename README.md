@@ -23,9 +23,12 @@ Let's first evaluate the backbone using this cmdline
 python trainer20.py --save_path <save_best_weight> --tb_filename <save_tensorboard_path> --pretrained_path pretrained_models/resnet20-12fca82f.th   --epochs 1 --pretrained --arch resnet20 --model resnet20 --evaluate --dataset_path <path2dataset> &  
 ```
 Expected Top1: 91.73.
+
 Now Let's integrate the block and finetune the network
-```python trainer20.py --save_path <path> --tb_filename <tb_path> --pretrained_path pretrained_models/resnet20-12fca82f.th --epochs 200 --pretrained --num_loops 2 --arch resnet20 --model resnet20_feedback --lr 0.1 --alpha 0.0001 --original_weights pretrained_models/resnet20-12fca82f.th --dataset_path <path2dataset> 
 ```
+python trainer20.py --save_path <path> --tb_filename <tb_path> --pretrained_path pretrained_models/resnet20-12fca82f.th --epochs 200 --pretrained --num_loops 2 --arch resnet20 --model resnet20_feedback --lr 0.1 --alpha 0.0001 --original_weights pretrained_models/resnet20-12fca82f.th --dataset_path <path2dataset> 
+```
+
 In order the evaluate the model:
 ```
 python trainer20.py --pretrained_path <weights2evaluate>  --epochs 200 --pretrained --num_loops 2 --arch resnet20 --model resnet20_feedback --alpha 0.0001 --original_weights pretrained_models/resnet20-12fca82f.th --dataset_path <path2dataset> --evaluate
