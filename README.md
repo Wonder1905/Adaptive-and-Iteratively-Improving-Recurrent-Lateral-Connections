@@ -23,7 +23,7 @@ Let's first evaluate the backbone using this cmdline
 ```
 python trainer20.py --save_path <save_best_weight> --tb_filename <save_tensorboard_path> --pretrained_path pretrained_models/resnet20-12fca82f.th   --epochs 1 --pretrained --arch resnet20 --model resnet20 --evaluate --dataset_path <path2dataset> &  
 ```
-Expected Top1: 91.73.
+*Expected Top1: 91.73*
 ##### Integrate block and FT:
 Let's integrate the block and finetune the network
 ```
@@ -33,6 +33,11 @@ python trainer20.py --save_path <path> --tb_filename <tb_path> --pretrained_path
 ```
 python trainer20.py --pretrained_path <weights2evaluate>  --epochs 200 --pretrained --num_loops 2 --arch resnet20 --model resnet20_feedback --alpha 0.0001 --original_weights pretrained_models/resnet20-12fca82f.th --dataset_path <path2dataset> --evaluate
 ```
+A pretrained model can be evaluated:
+```
+python trainer20.py --pretrained_path pretrained_models/2loops_ep138_acc93.16.pth  --epochs 200 --pretrained --num_loops 2 --arch resnet20 --model resnet20_feedback --alpha 0.0001 --original_weights pretrained_models/resnet20-12fca82f.th --dataset_path <path2dataset> --evaluate
+```
+*Expected Top1: 93.16*
 
 ### ResNet50 on ImageNet (Coming soon)
 We will build our model on top of PyTorch Resnet50.
